@@ -21,7 +21,8 @@ func _ready():
     if(global.currentCharacter == null):
         global.currentCharacter = Character.new();
         startCharacterTimer();
-        
+        return;
+    characterReady = true;
     pass;
 
 func _process(delta):

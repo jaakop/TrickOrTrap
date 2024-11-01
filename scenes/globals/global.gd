@@ -2,6 +2,7 @@ extends Node
 class_name  Globals
 
 var currentCharacter: Character;
+var dayTime: float;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
