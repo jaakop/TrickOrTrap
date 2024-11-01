@@ -75,3 +75,8 @@ func startCharacterTimer():
     timer.wait_time = randf_range(timeMin, timeMax);
     timer.start();
     pass;
+
+
+func _on_day_timer_day_ended():
+    print("Day ended!")
+    pass # Replace with function body.

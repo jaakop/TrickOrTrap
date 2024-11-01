@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=10 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="Texture2D" uid="uid://dgsmsn7nyn1j0" path="res://square.png" id="2_okn60"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://scenes/main_scene/door.gd" id="4_grahw"]
 [ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_ym5qv"]
 [ext_resource type="Texture2D" uid="uid://10v8r01qpi8m" path="res://shadow.png" id="6_ppvin"]
+[ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/ui/buttonRound_blue.png" id="7_6tgl0"]
+[ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/ui/buttonRound_beige.png" id="7_vp1an"]
+[ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
 layout_mode = 3
@@ -73,7 +76,21 @@ offset_right = 1916.0
 offset_bottom = 1080.0
 texture = ExtResource("6_ppvin")
 
+[node name="DayTimer" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1711.0
+offset_top = 50.0
+offset_right = 1822.0
+offset_bottom = 161.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_6tgl0")
+texture_progress = ExtResource("7_vp1an")
+script = ExtResource("9_bukiq")
+dayLength = 30.0
+
 [connection signal="pressed" from="Door/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Handle" to="." method="_on_handle_pressed"]
 [connection signal="pressed" from="LightSwitch" to="." method="_on_light_switch_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="day_ended" from="DayTimer" to="." method="_on_day_timer_day_ended"]
