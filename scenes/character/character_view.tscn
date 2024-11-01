@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyj4ker85ibv5"]
+
+[ext_resource type="Script" path="res://scenes/character/character_view.gd" id="1_1ufy7"]
+[ext_resource type="Texture2D" uid="uid://wrh5eyy45tyi" path="res://icon.svg" id="2_xq4cj"]
+[ext_resource type="Texture2D" uid="uid://r204654hsau5" path="res://g7.png" id="3_eh4rk"]
+[ext_resource type="Texture2D" uid="uid://dvx8eef3l0y2i" path="res://Peephole.png" id="3_fhha3"]
+[ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_xahix"]
+[ext_resource type="Script" path="res://scenes/character/BackButton.gd" id="5_56ek1"]
+
+[node name="CharacterView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ufy7")
+heads = Array[Texture2D]([ExtResource("2_xq4cj")])
+bodies = Array[Texture2D]([ExtResource("2_xq4cj")])
+evilHeads = Array[Texture2D]([ExtResource("3_eh4rk")])
+evilBodies = Array[Texture2D]([ExtResource("3_eh4rk")])
+
+[node name="Character" type="Node2D" parent="."]
+position = Vector2(932, 540)
+
+[node name="Head" type="Sprite2D" parent="Character"]
+position = Vector2(0, 40.5)
+scale = Vector2(1, 1.63281)
+texture = ExtResource("3_eh4rk")
+
+[node name="Body" type="Sprite2D" parent="Character"]
+position = Vector2(0, -102)
+texture = ExtResource("3_eh4rk")
+
+[node name="Overlay" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1084.0
+texture = ExtResource("3_fhha3")
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1169.0
+offset_top = 1078.0
+offset_right = 1630.0
+offset_bottom = 1244.0
+rotation = 3.14159
+texture_normal = ExtResource("4_xahix")
+script = ExtResource("5_56ek1")
+mainScene = "res://scenes/main_scene/main_scene.tscn"
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]

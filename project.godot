@@ -11,5 +11,17 @@ config_version=5
 [application]
 
 config/name="Trick Or Trap"
+run/main_scene="res://scenes/main_scene/main_scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scenes/globals/global.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/stretch/mode="canvas_items"

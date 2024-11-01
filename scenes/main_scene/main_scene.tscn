@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dspfgwwtorllt"]
+
+[ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
+[ext_resource type="PackedScene" uid="uid://ddl35qp3vogry" path="res://scenes/front_door/front_door.tscn" id="1_fc0ac"]
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7c8mb")
+
+[node name="FrontDoor" parent="." instance=ExtResource("1_fc0ac")]
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = -6.0
