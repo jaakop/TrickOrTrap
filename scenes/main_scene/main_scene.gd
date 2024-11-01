@@ -5,12 +5,17 @@ extends Control
 
 @export_file var characherScene: String;
 
+@export var shadow: TextureRect;
+
 @onready var global = $"/root/Global" as Globals
 @onready var timer = $"./Timer" as Timer;
 
 @onready var door = $"./Door" as Door;
 
 var characterReady: bool;
+
+var lightTimer: float;
+@export var lightLength: float; 
 
 func _ready():
     if(global.currentCharacter == null):
@@ -20,6 +25,11 @@ func _ready():
     pass;
 
 func _process(delta):
+    if(lightTimer > 0):
+        lightTimer -= delta;
+        if(lightTimer < 0):
+            shadow.hide();
+            startCharacterTimer();
     pass;
 
 func _on_light_switch_pressed():
@@ -27,7 +37,9 @@ func _on_light_switch_pressed():
         print("Evil character yeeted!");
     else:
         print("Good guy yeeted :C");
-    startCharacterTimer();
+
+    shadow.show();
+    lightTimer = lightLength;
     pass # Replace with function body.
 
 func _on_handle_pressed():

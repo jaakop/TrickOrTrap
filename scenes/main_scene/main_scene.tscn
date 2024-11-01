@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=7 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="Texture2D" uid="uid://dgsmsn7nyn1j0" path="res://square.png" id="2_okn60"]
 [ext_resource type="Texture2D" uid="uid://b40pi3e0c8mch" path="res://Door.png" id="3_axe38"]
 [ext_resource type="Script" path="res://scenes/main_scene/door.gd" id="4_grahw"]
 [ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_ym5qv"]
+[ext_resource type="Texture2D" uid="uid://10v8r01qpi8m" path="res://shadow.png" id="6_ppvin"]
 
-[node name="MainScene" type="Control"]
+[node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,8 @@ script = ExtResource("1_7c8mb")
 timeMin = 1.0
 timeMax = 3.0
 characherScene = "res://scenes/character/character_view.tscn"
+shadow = NodePath("Shadow")
+lightLength = 2.0
 
 [node name="Background2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -62,6 +65,13 @@ stretch_mode = 0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Shadow" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1916.0
+offset_bottom = 1080.0
+texture = ExtResource("6_ppvin")
 
 [connection signal="pressed" from="Door/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Handle" to="." method="_on_handle_pressed"]
