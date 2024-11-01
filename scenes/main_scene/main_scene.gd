@@ -5,8 +5,7 @@ extends Control
 func _ready():
     if(global.currentCharacter == null):
         global.currentCharacter = Character.new();
-        global.currentCharacter.generated = false;
-        global.currentCharacter.evil = true;
+        generateNewCharacter();
     pass;
 
 func _process(delta):
