@@ -1,41 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddl35qp3vogry"]
+[gd_scene load_steps=3 format=3 uid="uid://ddl35qp3vogry"]
 
-[ext_resource type="Texture2D" uid="uid://dgsmsn7nyn1j0" path="res://square.png" id="1_tba0w"]
 [ext_resource type="Script" path="res://scenes/front_door/Door.gd" id="2_3dra8"]
 [ext_resource type="Texture2D" uid="uid://b40pi3e0c8mch" path="res://Door.png" id="2_y4r8i"]
 
-[node name="FrontDoor" type="Control"]
-layout_mode = 3
+[node name="FrontDoor" type="TextureRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 768.0
-offset_bottom = 432.0
+offset_right = -1408.0
+offset_bottom = -218.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 1915.0
-offset_bottom = 1075.0
-texture = ExtResource("1_tba0w")
-
-[node name="Door" type="Node2D" parent="."]
+texture = ExtResource("2_y4r8i")
 script = ExtResource("2_3dra8")
 characterScene = "res://scenes/character/character_view.tscn"
 
-[node name="Image" type="TextureRect" parent="Door"]
-offset_left = 771.0
-offset_top = 264.0
-offset_right = 1143.0
-offset_bottom = 870.0
-texture = ExtResource("2_y4r8i")
-
-[node name="TextureButton" type="TextureButton" parent="Door/Image"]
+[node name="WindowButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = -3.0
-offset_right = 370.0
-offset_bottom = 605.0
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 512.0
+offset_bottom = 848.0
 
-[connection signal="pressed" from="Door/Image/TextureButton" to="Door" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="WindowButton" to="." method="_on_window_button_pressed"]
