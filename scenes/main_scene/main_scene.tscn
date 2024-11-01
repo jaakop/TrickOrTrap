@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=5 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="PackedScene" uid="uid://ddl35qp3vogry" path="res://scenes/front_door/front_door.tscn" id="1_fc0ac"]
 [ext_resource type="Texture2D" uid="uid://dgsmsn7nyn1j0" path="res://square.png" id="2_okn60"]
+[ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_ym5qv"]
 
 [node name="MainScene" type="Control"]
 layout_mode = 3
@@ -31,3 +32,26 @@ offset_right = 1153.0
 offset_bottom = 888.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Handle" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 598.0
+offset_right = 853.0
+offset_bottom = 638.0
+texture_normal = ExtResource("4_ym5qv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LightSwitch" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 549.0
+offset_right = 748.0
+offset_bottom = 650.0
+texture_normal = ExtResource("4_ym5qv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Handle" to="." method="_on_handle_pressed"]
+[connection signal="pressed" from="LightSwitch" to="." method="_on_light_switch_pressed"]
