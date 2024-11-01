@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d2osqlqw31f8w"]
+
+[ext_resource type="Texture2D" uid="uid://bq471rgfabw36" path="res://assets/ui/buttonLong_blue.png" id="1_lyfy5"]
+[ext_resource type="Texture2D" uid="uid://d0kjn5rlwpxdb" path="res://assets/ui/buttonLong_blue_pressed.png" id="2_83ogl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7neu"]
+texture = ExtResource("1_lyfy5")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.921569, 0.921569, 0.921569, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8xbum"]
+texture = ExtResource("1_lyfy5")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5avyi"]
+texture = ExtResource("2_83ogl")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+Button/font_sizes/font_size = 64
+Button/styles/hover = SubResource("StyleBoxTexture_p7neu")
+Button/styles/normal = SubResource("StyleBoxTexture_8xbum")
+Button/styles/pressed = SubResource("StyleBoxTexture_5avyi")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://byvvtlansjo6a"]
+
+[ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_wfi1s"]
+[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="2_um17i"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_wfi1s")
+script = ExtResource("2_um17i")
+mainScene = "res://scenes/main_scene/main_scene.tscn"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 475.0
+offset_right = 1239.0
+offset_bottom = 604.0
+text = "Start"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 634.0
+offset_right = 1239.0
+offset_bottom = 763.0
+text = "Quit "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
