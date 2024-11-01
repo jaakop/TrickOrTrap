@@ -8,6 +8,8 @@ extends Control
 @onready var global = $"/root/Global" as Globals
 @onready var timer = $"./Timer" as Timer;
 
+@onready var door = $"./Door" as Door;
+
 var characterReady: bool;
 
 func _ready():
@@ -36,12 +38,17 @@ func _on_handle_pressed():
     startCharacterTimer();
     pass # Replace with function body.
 
-func startCharacterTimer():
-    characterReady = false;
+func _on_texture_button_pressed():
+    if(!characterReady):
+        return;
+    get_tree().change_scene_to_file(characherScene);
+    pass # Replace with function body.
 
-    timer.wait_time = randf_range(timeMin, timeMax);
-    timer.start();
-    pass;
+func _on_timer_timeout():
+    characterReady = true;
+    generateNewCharacter();
+    door.knock();
+    pass # Replace with function body.
 
 func generateNewCharacter():
     global.currentCharacter.generated = false;
@@ -50,15 +57,9 @@ func generateNewCharacter():
     global.currentCharacter.bodyTexture = "";
     pass;
 
-func _on_texture_button_pressed():
-    if(!characterReady):
-        return;
-    get_tree().change_scene_to_file(characherScene);
-    pass # Replace with function body.
+func startCharacterTimer():
+    characterReady = false;
 
-
-func _on_timer_timeout():
-    characterReady = true;
-    generateNewCharacter();
-    print("New character ready!")
-    pass # Replace with function body.
+    timer.wait_time = randf_range(timeMin, timeMax);
+    timer.start();
+    pass;
