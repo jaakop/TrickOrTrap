@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=14 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="Texture2D" uid="uid://cj81yxbtao67k" path="res://assets/sprites/DoorBW.png" id="2_seoe4"]
 [ext_resource type="Texture2D" uid="uid://bfew8spne0a04" path="res://assets/sprites/DoorDoorBW.png" id="3_an5qq"]
 [ext_resource type="Script" path="res://scenes/main_scene/door.gd" id="4_grahw"]
+[ext_resource type="Texture2D" uid="uid://d0eoruowyyci2" path="res://assets/sprites/doorknobBW.png" id="5_akymp"]
+[ext_resource type="Texture2D" uid="uid://cc4ctp52i5761" path="res://assets/sprites/doorWindowBW.png" id="5_t08bh"]
+[ext_resource type="Texture2D" uid="uid://ctjax71rbwbfp" path="res://assets/sprites/lightSwitchBW.png" id="6_1sb07"]
 [ext_resource type="Texture2D" uid="uid://10v8r01qpi8m" path="res://shadow.png" id="6_ppvin"]
 [ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/ui/buttonRound_blue.png" id="7_6tgl0"]
 [ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/ui/buttonRound_beige.png" id="7_vp1an"]
@@ -44,30 +47,33 @@ texture = ExtResource("3_an5qq")
 expand_mode = 1
 script = ExtResource("4_grahw")
 
-[node name="TextureButton" type="TextureButton" parent="Door"]
+[node name="Window" type="TextureButton" parent="Door"]
 layout_mode = 0
-offset_left = 172.0
-offset_top = 127.0
-offset_right = 409.0
-offset_bottom = 364.0
+offset_left = 193.0
+offset_top = 133.0
+offset_right = 471.0
+offset_bottom = 416.0
+texture_normal = ExtResource("5_t08bh")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Handle" type="TextureButton" parent="Door"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 407.0
-offset_right = 184.0
-offset_bottom = 463.0
+offset_left = 120.0
+offset_top = 399.0
+offset_right = 192.0
+offset_bottom = 471.0
+texture_normal = ExtResource("5_akymp")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="LightSwitch" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 531.0
-offset_top = 516.0
-offset_right = 618.0
-offset_bottom = 631.0
+offset_left = 529.0
+offset_top = 504.0
+offset_right = 620.0
+offset_bottom = 643.0
+texture_normal = ExtResource("6_1sb07")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -108,7 +114,7 @@ nine_patch_stretch = true
 texture_under = ExtResource("10_svlxc")
 texture_progress = ExtResource("11_abiep")
 
-[connection signal="pressed" from="Door/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Door/Window" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Door/Handle" to="." method="_on_handle_pressed"]
 [connection signal="pressed" from="LightSwitch" to="." method="_on_light_switch_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
