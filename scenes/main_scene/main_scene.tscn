@@ -8,11 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cc4ctp52i5761" path="res://assets/sprites/doorWindowBW.png" id="5_t08bh"]
 [ext_resource type="Texture2D" uid="uid://ctjax71rbwbfp" path="res://assets/sprites/lightSwitchBW.png" id="6_1sb07"]
 [ext_resource type="Texture2D" uid="uid://10v8r01qpi8m" path="res://shadow.png" id="6_ppvin"]
-[ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/ui/buttonRound_blue.png" id="7_6tgl0"]
-[ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/ui/buttonRound_beige.png" id="7_vp1an"]
+[ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/kenney-ui/buttonRound_blue.png" id="7_6tgl0"]
+[ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/kenney-ui/buttonRound_beige.png" id="7_vp1an"]
 [ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
-[ext_resource type="Texture2D" uid="uid://b6tpniwpqrx6j" path="res://assets/ui/panelInset_blue.png" id="10_svlxc"]
-[ext_resource type="Texture2D" uid="uid://dxkg7aphgiaj5" path="res://assets/ui/cursorSword_silver.png" id="11_abiep"]
+[ext_resource type="Texture2D" uid="uid://b6tpniwpqrx6j" path="res://assets/kenney-ui/panelInset_blue.png" id="10_svlxc"]
+[ext_resource type="Texture2D" uid="uid://dxkg7aphgiaj5" path="res://assets/kenney-ui/cursorSword_silver.png" id="11_abiep"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
 layout_mode = 3

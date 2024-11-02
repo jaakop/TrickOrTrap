@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://d2osqlqw31f8w"]
 
-[ext_resource type="Texture2D" uid="uid://bq471rgfabw36" path="res://assets/ui/buttonLong_blue.png" id="1_lyfy5"]
-[ext_resource type="Texture2D" uid="uid://d0kjn5rlwpxdb" path="res://assets/ui/buttonLong_blue_pressed.png" id="2_83ogl"]
+[ext_resource type="Texture2D" uid="uid://bq471rgfabw36" path="res://assets/kenney-ui/buttonLong_blue.png" id="1_lyfy5"]
+[ext_resource type="Texture2D" uid="uid://d0kjn5rlwpxdb" path="res://assets/kenney-ui/buttonLong_blue_pressed.png" id="2_83ogl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7neu"]
 texture = ExtResource("1_lyfy5")

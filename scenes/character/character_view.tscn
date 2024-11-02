@@ -33,7 +33,7 @@ texture = ExtResource("4_suyo0")
 expand_mode = 1
 
 [node name="Character" type="Node2D" parent="."]
-position = Vector2(923, 680)
+position = Vector2(920, 713)
 
 [node name="Body" type="Sprite2D" parent="Character"]
 position = Vector2(1, 14)
@@ -41,7 +41,7 @@ scale = Vector2(0.135125, 0.135125)
 texture = ExtResource("3_2r6p1")
 
 [node name="Head" type="Sprite2D" parent="Character"]
-position = Vector2(0.5, 78)
+position = Vector2(5, -219)
 scale = Vector2(0.1385, 0.204101)
 texture = ExtResource("2_y3qv1")
 
