@@ -70,6 +70,7 @@ func _on_handle_pressed():
 
     if(global.currentCharacter.evil):
         get_tree().change_scene_to_file(deathScene);
+        return;
     else:
         global.score += 1;
     
