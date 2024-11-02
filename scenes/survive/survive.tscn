@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3v8vlpqhn3f5"]
+[gd_scene load_steps=4 format=3 uid="uid://c3v8vlpqhn3f5"]
 
 [ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_noxys"]
 [ext_resource type="Script" path="res://scenes/survive/survive.gd" id="2_6ddav"]
+[ext_resource type="Script" path="res://scenes/main_menu/sound_button.gd" id="3_8n1fi"]
 
 [node name="Survive" type="Control"]
 layout_mode = 3
@@ -61,5 +62,6 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 191
 text = "Continue"
+script = ExtResource("3_8n1fi")
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

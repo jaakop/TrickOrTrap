@@ -18,8 +18,11 @@ extends Control
 @onready var timer = $"./Timer" as Timer;
 
 @onready var door = $"./Door" as Door;
+@onready var doorSound = $"./Door/Handle/DoorSound" as AudioStreamPlayer;
+@onready var knockSound = $"./Door/knockSound" as AudioStreamPlayer;
 @onready var handle = $"./Door/Handle/Highlight" as Highlight;
 @onready var lightSwitch = $"./LightSwitch/Highlight" as Highlight;
+@onready var lightSound = $"./LightSwitch/LightSwitchSound" as AudioStreamPlayer;
 
 @onready var jinxMeter = $"./JinxMeter" as JinxMeter
 
@@ -45,6 +48,7 @@ func _process(delta):
     if(lightTimer > 0):
         lightTimer -= delta;
         if(lightTimer < 0):
+            lightSound.play();
             shadow.hide();
             startCharacterTimer();
     pass;
@@ -52,6 +56,8 @@ func _process(delta):
 func _on_light_switch_pressed():
     if(!characterReady):
         return;
+
+    lightSound.play();
 
     if(global.currentCharacter.evil):
         print("Evil character sent out")
@@ -67,6 +73,8 @@ func _on_light_switch_pressed():
 func _on_handle_pressed():
     if(!characterReady):
         return;
+
+    doorSound.play();
 
     if(global.currentCharacter.evil):
         get_tree().change_scene_to_file(deathScene);
@@ -89,6 +97,7 @@ func _on_timer_timeout():
     characterReady = true;
     generateNewCharacter();
     door.knock();
+    knockSound.play();
     pass # Replace with function body.
 
 func _on_day_timer_day_ended():

@@ -4,6 +4,7 @@ class_name Highlight
 @export var scaleFactor: float;
 @export var tweenDuration: float;
 
+
 var initialScale;
 
 var tween;

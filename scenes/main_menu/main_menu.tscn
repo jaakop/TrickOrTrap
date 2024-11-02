@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://byvvtlansjo6a"]
+[gd_scene load_steps=4 format=3 uid="uid://byvvtlansjo6a"]
 
 [ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_wfi1s"]
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="2_um17i"]
+[ext_resource type="Script" path="res://scenes/main_menu/sound_button.gd" id="3_ccc2i"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,6 +19,7 @@ offset_right = 1239.0
 offset_bottom = 604.0
 theme_override_font_sizes/font_size = 111
 text = "Start"
+script = ExtResource("3_ccc2i")
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
@@ -27,6 +29,7 @@ offset_right = 1239.0
 offset_bottom = 763.0
 theme_override_font_sizes/font_size = 111
 text = "Quit "
+script = ExtResource("3_ccc2i")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

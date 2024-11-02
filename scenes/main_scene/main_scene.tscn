@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=23 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_7uluj"]
@@ -13,11 +13,15 @@
 [ext_resource type="Script" path="res://scenes/main_scene/interactable.gd" id="7_seofd"]
 [ext_resource type="Script" path="res://scenes/main_scene/highlight.gd" id="8_muqtd"]
 [ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
+[ext_resource type="AudioStream" uid="uid://uxnhbn53b528" path="res://assets/sounds/door-43633.mp3" id="11_itno3"]
+[ext_resource type="AudioStream" uid="uid://cueimfxjvdwhy" path="res://assets/sounds/knock-on-door-6228.mp3" id="12_blffj"]
 [ext_resource type="Texture2D" uid="uid://c8pc641r8itgs" path="res://assets/ui/sphere.png" id="12_xr164"]
 [ext_resource type="Texture2D" uid="uid://b0m4lk7n2a3uw" path="res://assets/ui/jesterHat.png" id="13_0btur"]
 [ext_resource type="Texture2D" uid="uid://b158706fku83p" path="res://assets/ui/moon.png" id="13_8rd26"]
 [ext_resource type="Script" path="res://scenes/main_scene/jinx_meter.gd" id="13_c1jd5"]
+[ext_resource type="AudioStream" uid="uid://ce2dpciwkgwfx" path="res://assets/sounds/light-switch-81967.mp3" id="13_n6slh"]
 [ext_resource type="Script" path="res://scenes/main_scene/exit_pop_up.gd" id="15_8i626"]
+[ext_resource type="Script" path="res://scenes/main_menu/sound_button.gd" id="19_0j6he"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
 layout_mode = 3
@@ -117,6 +121,12 @@ script = ExtResource("8_muqtd")
 scaleFactor = 1.3
 tweenDuration = 0.75
 
+[node name="DoorSound" type="AudioStreamPlayer" parent="Door/Handle"]
+stream = ExtResource("11_itno3")
+
+[node name="knockSound" type="AudioStreamPlayer" parent="Door"]
+stream = ExtResource("12_blffj")
+
 [node name="LightSwitch" type="TextureButton" parent="."]
 z_index = 1
 layout_mode = 0
@@ -148,6 +158,9 @@ expand_mode = 1
 script = ExtResource("8_muqtd")
 scaleFactor = 1.3
 tweenDuration = 0.75
+
+[node name="LightSwitchSound" type="AudioStreamPlayer" parent="LightSwitch"]
+stream = ExtResource("13_n6slh")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -198,7 +211,7 @@ texture_progress = ExtResource("13_8rd26")
 radial_initial_angle = 180.0
 radial_center_offset = Vector2(-250, 0)
 script = ExtResource("9_bukiq")
-dayLength = 60.0
+dayLength = 100.0
 timePerDay = 5.0
 minDayLenght = 20.0
 
@@ -266,6 +279,7 @@ offset_right = 979.386
 offset_bottom = 1112.42
 theme_override_font_sizes/font_size = 161
 text = "No"
+script = ExtResource("19_0j6he")
 
 [node name="YesButton" type="Button" parent="ExitPopUp/Panel"]
 layout_mode = 0
@@ -275,6 +289,7 @@ offset_right = 1912.72
 offset_bottom = 1105.4
 theme_override_font_sizes/font_size = 161
 text = "Yes"
+script = ExtResource("19_0j6he")
 
 [connection signal="pressed" from="Door/Window" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Door/Handle" to="." method="_on_handle_pressed"]

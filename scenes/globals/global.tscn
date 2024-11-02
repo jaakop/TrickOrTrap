@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccyvrn53jwh14"]
+[gd_scene load_steps=5 format=3 uid="uid://ccyvrn53jwh14"]
 
 [ext_resource type="Script" path="res://scenes/globals/global.gd" id="1_f1kqg"]
+[ext_resource type="AudioStream" uid="uid://f73mwvg64wpl" path="res://assets/sounds/finger-snap-179180.mp3" id="2_bu4xm"]
+[ext_resource type="AudioStream" uid="uid://uy1a6o0s4vn3" path="res://assets/sounds/mouse-click-sound-233951.mp3" id="3_ceyh7"]
+[ext_resource type="AudioStream" uid="uid://qo8btvv7fnxd" path="res://assets/sounds/creepyloop-v2.ogg" id="4_q6vla"]
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_f1kqg")
+
+[node name="buttonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bu4xm")
+
+[node name="buttonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ceyh7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q6vla")
+autoplay = true
