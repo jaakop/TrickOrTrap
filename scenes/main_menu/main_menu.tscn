@@ -8,6 +8,7 @@ layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_wfi1s")
 script = ExtResource("2_um17i")
+mainScene = "res://scenes/main_scene/main_scene.tscn"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
