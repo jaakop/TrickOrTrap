@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://blurua0i8dnj5"]
+
+[ext_resource type="Texture2D" uid="uid://brgk8shekcek7" path="res://assets/characters/witch/witchBodyEvil.png" id="1_fgjo4"]
+[ext_resource type="Texture2D" uid="uid://bjdsnydds06ri" path="res://assets/characters/witch/witchHeadEvil.png" id="2_n5148"]
+
+[node name="Character" type="Node2D"]
+position = Vector2(920, 713)
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.135125, 0.135125)
+texture = ExtResource("1_fgjo4")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(2, -188)
+scale = Vector2(0.110212, 0.16443)
+texture = ExtResource("2_n5148")

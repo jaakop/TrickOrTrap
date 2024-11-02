@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyj4ker85ibv5"]
+[gd_scene load_steps=9 format=3 uid="uid://dyj4ker85ibv5"]
 
 [ext_resource type="Script" path="res://scenes/character/character_view.gd" id="1_1ufy7"]
 [ext_resource type="Resource" uid="uid://b240dqsa81n8c" path="res://assets/characters/ghost.tres" id="2_ctgnw"]
 [ext_resource type="Texture2D" uid="uid://dvx8eef3l0y2i" path="res://Peephole.png" id="3_fhha3"]
 [ext_resource type="Resource" uid="uid://cyqj34ialxpgp" path="res://assets/characters/vampyr.tres" id="3_jtdnr"]
+[ext_resource type="Resource" uid="uid://d3wkojr1il6xv" path="res://assets/characters/witch.tres" id="4_i6afk"]
 [ext_resource type="Texture2D" uid="uid://b0id4fn2s3qux" path="res://assets/sprites/porchBW.png" id="4_suyo0"]
 [ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_xahix"]
 [ext_resource type="Script" path="res://scenes/character/BackButton.gd" id="5_56ek1"]
@@ -16,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1ufy7")
-characters = Array[Resource("res://scenes/character/character_preset.gd")]([ExtResource("2_ctgnw"), ExtResource("3_jtdnr")])
+characters = Array[Resource("res://scenes/character/character_preset.gd")]([ExtResource("2_ctgnw"), ExtResource("3_jtdnr"), ExtResource("4_i6afk")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
