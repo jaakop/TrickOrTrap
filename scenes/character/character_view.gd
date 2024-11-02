@@ -11,32 +11,32 @@ extends Control
 @onready var bodySprite = $"./Character/Body" as Sprite2D
 
 func _ready():
-    if(global.currentCharacter.generated == false ):
+    if (global.currentCharacter.generated == false):
         generateCharacter();
     else:
         loadCharacter();
-    pass;
+    pass ;
 
 func _process(delta):
-    pass;
+    pass ;
 
 func loadCharacter():
     headSprite.texture = load(global.currentCharacter.faceTexture);
     bodySprite.texture = load(global.currentCharacter.bodyTexture);
-    pass;
+    pass ;
 
 func generateCharacter():
     print("Generated new character")
     global.currentCharacter.generated = true;
 
-    if(global.currentCharacter.evil):
+    if (global.currentCharacter.evil):
         var isHeadEvil = false;
-        if(randi_range(0, 1) == 1):
+        if (randi_range(0, 1) == 1):
             isHeadEvil = true;
             headSprite.texture = evilHeads[randi_range(0, evilHeads.size() - 1)];
         else:
             headSprite.texture = heads[randi_range(0, heads.size() - 1)];
-        if(!isHeadEvil || randi_range(0,1) == 1):
+        if (!isHeadEvil || randi_range(0, 1) == 1):
             bodySprite.texture = evilBodies[randi_range(0, evilBodies.size() - 1)];
         else:
             bodySprite.texture = bodies[randi_range(0, bodies.size() - 1)];
@@ -46,4 +46,4 @@ func generateCharacter():
     
     global.currentCharacter.faceTexture = headSprite.texture.resource_path;
     global.currentCharacter.bodyTexture = bodySprite.texture.resource_path;
-    pass;
+    pass ;

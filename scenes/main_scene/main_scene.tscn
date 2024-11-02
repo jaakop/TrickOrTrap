@@ -1,14 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=11 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
-[ext_resource type="Texture2D" uid="uid://do2tijw2qr7sp" path="res://assets/sprites/Background.png" id="2_6pmx7"]
-[ext_resource type="Texture2D" uid="uid://c3i5h4okypbow" path="res://assets/sprites/door.png" id="3_i7hoi"]
+[ext_resource type="Texture2D" uid="uid://cj81yxbtao67k" path="res://assets/sprites/DoorBW.png" id="2_seoe4"]
+[ext_resource type="Texture2D" uid="uid://bfew8spne0a04" path="res://assets/sprites/DoorDoorBW.png" id="3_an5qq"]
 [ext_resource type="Script" path="res://scenes/main_scene/door.gd" id="4_grahw"]
-[ext_resource type="Texture2D" uid="uid://7gk4gtva75tp" path="res://assets/sprites/doorwindoe.png" id="5_t3e7k"]
-[ext_resource type="Texture2D" uid="uid://co31ciba3jwgm" path="res://assets/sprites/doorknob.png" id="6_cggrj"]
 [ext_resource type="Texture2D" uid="uid://10v8r01qpi8m" path="res://shadow.png" id="6_ppvin"]
 [ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/ui/buttonRound_blue.png" id="7_6tgl0"]
-[ext_resource type="Texture2D" uid="uid://vor7uqanjol4" path="res://assets/sprites/LightSwitch.png" id="7_027qm"]
 [ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/ui/buttonRound_beige.png" id="7_vp1an"]
 [ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
 [ext_resource type="Texture2D" uid="uid://b6tpniwpqrx6j" path="res://assets/ui/panelInset_blue.png" id="10_svlxc"]
@@ -31,51 +28,46 @@ lightLength = 2.0
 
 [node name="Background2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 154.0
-offset_top = 8.0
-offset_right = 1773.0
-offset_bottom = 1079.0
-texture = ExtResource("2_6pmx7")
+offset_right = 1923.0
+offset_bottom = 1150.0
+texture = ExtResource("2_seoe4")
 expand_mode = 1
 
 [node name="Door" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 699.0
-offset_top = 218.0
-offset_right = 1242.0
-offset_bottom = 890.0
+offset_left = 620.0
+offset_top = 150.0
+offset_right = 1269.0
+offset_bottom = 956.0
 pivot_offset = Vector2(186, 606)
-texture = ExtResource("3_i7hoi")
+texture = ExtResource("3_an5qq")
 expand_mode = 1
 script = ExtResource("4_grahw")
 
 [node name="TextureButton" type="TextureButton" parent="Door"]
 layout_mode = 0
-offset_left = 157.0
-offset_top = 101.0
-offset_right = 394.0
-offset_bottom = 338.0
-texture_normal = ExtResource("5_t3e7k")
+offset_left = 172.0
+offset_top = 127.0
+offset_right = 409.0
+offset_bottom = 364.0
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Handle" type="TextureButton" parent="Door"]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 328.0
-offset_right = 153.0
-offset_bottom = 384.0
-texture_normal = ExtResource("6_cggrj")
+offset_left = 128.0
+offset_top = 407.0
+offset_right = 184.0
+offset_bottom = 463.0
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="LightSwitch" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 614.0
+offset_left = 531.0
 offset_top = 516.0
-offset_right = 688.0
-offset_bottom = 614.0
-texture_normal = ExtResource("7_027qm")
+offset_right = 618.0
+offset_bottom = 631.0
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -90,6 +82,7 @@ offset_bottom = 1080.0
 texture = ExtResource("6_ppvin")
 
 [node name="DayTimer" type="TextureProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1778.0
 offset_top = 33.0
@@ -103,6 +96,7 @@ script = ExtResource("9_bukiq")
 dayLength = 30.0
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 60.0
 offset_top = 64.0
