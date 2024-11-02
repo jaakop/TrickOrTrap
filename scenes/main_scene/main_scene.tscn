@@ -151,7 +151,6 @@ grow_vertical = 2
 texture = ExtResource("6_ppvin")
 
 [node name="Panel" type="Panel" parent="ExitPopUp"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -175,6 +174,8 @@ offset_bottom = 568.368
 theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
 theme_override_font_sizes/font_size = 186
 text = "Return to main menu?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NoButton" type="Button" parent="ExitPopUp/Panel"]
 layout_mode = 0
