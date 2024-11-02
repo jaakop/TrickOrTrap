@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wrh5eyy45tyi" path="res://icon.svg" id="2_xq4cj"]
 [ext_resource type="Texture2D" uid="uid://r204654hsau5" path="res://g7.png" id="3_eh4rk"]
 [ext_resource type="Texture2D" uid="uid://dvx8eef3l0y2i" path="res://Peephole.png" id="3_fhha3"]
-[ext_resource type="Texture2D" uid="uid://bvwy11i31rc5b" path="res://assets/sprites/porch.png" id="4_8ljm5"]
+[ext_resource type="Texture2D" uid="uid://b0id4fn2s3qux" path="res://assets/sprites/porchBW.png" id="4_suyo0"]
 [ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_xahix"]
 [ext_resource type="Script" path="res://scenes/character/BackButton.gd" id="5_56ek1"]
 
@@ -23,15 +23,15 @@ evilBodies = Array[Texture2D]([ExtResource("3_eh4rk")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 7.0
-offset_right = 1600.0
-offset_bottom = 1073.0
-texture = ExtResource("4_8ljm5")
+offset_left = -63.0
+offset_top = -239.0
+offset_right = 1839.0
+offset_bottom = 1189.0
+texture = ExtResource("4_suyo0")
 expand_mode = 1
 
 [node name="Character" type="Node2D" parent="."]
-position = Vector2(949, 664)
+position = Vector2(959, 710)
 
 [node name="Head" type="Sprite2D" parent="Character"]
 position = Vector2(0, 40.5)
@@ -44,8 +44,10 @@ texture = ExtResource("3_eh4rk")
 
 [node name="Overlay" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1924.0
-offset_bottom = 1084.0
+offset_left = -8.0
+offset_top = -2.0
+offset_right = 1941.0
+offset_bottom = 1096.0
 texture = ExtResource("3_fhha3")
 
 [node name="BackButton" type="TextureButton" parent="."]
