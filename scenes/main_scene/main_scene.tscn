@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=16 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_7uluj"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0m4lk7n2a3uw" path="res://assets/ui/jesterHat.png" id="13_0btur"]
 [ext_resource type="Texture2D" uid="uid://b158706fku83p" path="res://assets/ui/moon.png" id="13_8rd26"]
 [ext_resource type="Script" path="res://scenes/main_scene/jinx_meter.gd" id="13_c1jd5"]
+[ext_resource type="Script" path="res://scenes/main_scene/exit_pop_up.gd" id="15_8i626"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
 layout_mode = 3
@@ -109,8 +110,8 @@ texture = ExtResource("13_0btur")
 [node name="Shadow" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_right = 1916.0
-offset_bottom = 1080.0
+offset_right = 2124.0
+offset_bottom = 1281.0
 texture = ExtResource("6_ppvin")
 
 [node name="DayTimer" type="TextureProgressBar" parent="."]
@@ -129,8 +130,74 @@ radial_center_offset = Vector2(-250, 0)
 script = ExtResource("9_bukiq")
 dayLength = 30.0
 
+[node name="ExitPopUp" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_8i626")
+mainMenuScene = "res://scenes/main_menu/main_menu.tscn"
+
+[node name="Shadow" type="TextureRect" parent="ExitPopUp"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ppvin")
+
+[node name="Panel" type="Panel" parent="ExitPopUp"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -180.0
+offset_right = 1843.0
+offset_bottom = 1069.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.285, 0.285)
+
+[node name="Label" type="Label" parent="ExitPopUp/Panel"]
+layout_mode = 0
+offset_left = 115.789
+offset_top = 147.368
+offset_right = 1971.79
+offset_bottom = 568.368
+theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_font_sizes/font_size = 186
+text = "Return to main menu?"
+
+[node name="NoButton" type="Button" parent="ExitPopUp/Panel"]
+layout_mode = 0
+offset_left = 154.386
+offset_top = 768.421
+offset_right = 979.386
+offset_bottom = 1112.42
+theme_override_font_sizes/font_size = 161
+text = "No"
+
+[node name="YesButton" type="Button" parent="ExitPopUp/Panel"]
+layout_mode = 0
+offset_left = 1087.72
+offset_top = 761.403
+offset_right = 1912.72
+offset_bottom = 1105.4
+theme_override_font_sizes/font_size = 161
+text = "Yes"
+
 [connection signal="pressed" from="Door/Window" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Door/Handle" to="." method="_on_handle_pressed"]
 [connection signal="pressed" from="LightSwitch" to="." method="_on_light_switch_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="day_ended" from="DayTimer" to="." method="_on_day_timer_day_ended"]
+[connection signal="pressed" from="ExitPopUp/Panel/NoButton" to="ExitPopUp" method="_on_no_button_pressed"]
+[connection signal="pressed" from="ExitPopUp/Panel/YesButton" to="ExitPopUp" method="_on_yes_button_pressed"]

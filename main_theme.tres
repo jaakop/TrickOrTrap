@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://d2osqlqw31f8w"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d2osqlqw31f8w"]
 
 [ext_resource type="Texture2D" uid="uid://dyijg5kabmh0y" path="res://assets/ui/button.png" id="1_klsot"]
+[ext_resource type="FontFile" uid="uid://cvctsr6fv1io5" path="res://GamjaFlower-Regular.ttf" id="1_scj5k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7neu"]
 texture = ExtResource("1_klsot")
@@ -23,11 +24,14 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [resource]
+default_font = ExtResource("1_scj5k")
 Button/colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
+Button/colors/font_focus_color = Color(0.203922, 0.203922, 0.203922, 1)
 Button/colors/font_hover_color = Color(0.203922, 0.203922, 0.203922, 1)
 Button/colors/font_hover_pressed_color = Color(0.203922, 0.203922, 0.203922, 1)
 Button/colors/font_pressed_color = Color(0.203922, 0.203922, 0.203922, 1)
 Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_scj5k")
 Button/styles/hover = SubResource("StyleBoxTexture_p7neu")
 Button/styles/normal = SubResource("StyleBoxTexture_8xbum")
 Button/styles/pressed = SubResource("StyleBoxTexture_5avyi")
