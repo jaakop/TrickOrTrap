@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=12 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="Texture2D" uid="uid://dgsmsn7nyn1j0" path="res://square.png" id="2_okn60"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/ui/buttonRound_blue.png" id="7_6tgl0"]
 [ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/ui/buttonRound_beige.png" id="7_vp1an"]
 [ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
+[ext_resource type="Texture2D" uid="uid://b6tpniwpqrx6j" path="res://assets/ui/panelInset_blue.png" id="10_svlxc"]
+[ext_resource type="Texture2D" uid="uid://dxkg7aphgiaj5" path="res://assets/ui/cursorSword_silver.png" id="11_abiep"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
 layout_mode = 3
@@ -22,6 +24,7 @@ timeMin = 1.0
 timeMax = 3.0
 characherScene = "res://scenes/character/character_view.tscn"
 shadow = NodePath("Shadow")
+maxHealth = 3
 lightLength = 2.0
 
 [node name="Background2" type="TextureRect" parent="."]
@@ -46,12 +49,12 @@ layout_mode = 0
 offset_right = 371.0
 offset_bottom = 607.0
 
-[node name="Handle" type="TextureButton" parent="."]
+[node name="Handle" type="TextureButton" parent="Door"]
 layout_mode = 0
-offset_left = 813.0
-offset_top = 598.0
-offset_right = 853.0
-offset_bottom = 638.0
+offset_left = 35.0
+offset_top = 321.0
+offset_right = 75.0
+offset_bottom = 361.0
 texture_normal = ExtResource("4_ym5qv")
 ignore_texture_size = true
 stretch_mode = 0
@@ -89,8 +92,20 @@ texture_progress = ExtResource("7_vp1an")
 script = ExtResource("9_bukiq")
 dayLength = 30.0
 
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 64.0
+offset_right = 552.0
+offset_bottom = 158.0
+max_value = 3.0
+value = 3.0
+nine_patch_stretch = true
+texture_under = ExtResource("10_svlxc")
+texture_progress = ExtResource("11_abiep")
+
 [connection signal="pressed" from="Door/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Handle" to="." method="_on_handle_pressed"]
+[connection signal="pressed" from="Door/Handle" to="." method="_on_handle_pressed"]
 [connection signal="pressed" from="LightSwitch" to="." method="_on_light_switch_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="day_ended" from="DayTimer" to="." method="_on_day_timer_day_ended"]

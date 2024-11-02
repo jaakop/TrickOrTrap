@@ -7,10 +7,14 @@ extends Control
 
 @export var shadow: TextureRect;
 
+@export var maxHealth: int;
+
 @onready var global = $"/root/Global" as Globals
 @onready var timer = $"./Timer" as Timer;
 
 @onready var door = $"./Door" as Door;
+
+@onready var healthBar = $"./HealthBar" as TextureProgressBar
 
 var characterReady: bool;
 
@@ -18,6 +22,8 @@ var lightTimer: float;
 @export var lightLength: float; 
 
 func _ready():
+    healthBar.max_value = maxHealth;
+
     if(global.currentCharacter == null):
         global.currentCharacter = Character.new();
         startCharacterTimer();
@@ -34,20 +40,26 @@ func _process(delta):
     pass;
 
 func _on_light_switch_pressed():
+    if(!characterReady):
+        return;
+
     if(global.currentCharacter.evil):
-        print("Evil character yeeted!");
+        print("Evil character sent out")
     else:
-        print("Good guy yeeted :C");
+        updateLives(-1);
 
     shadow.show();
     lightTimer = lightLength;
     pass # Replace with function body.
 
 func _on_handle_pressed():
+    if(!characterReady):
+        return;
+
     if(global.currentCharacter.evil):
         print("Evil character let in :c");
     else:
-        print("Good guy let in!");
+        print("Good character let in!")
     startCharacterTimer();
     pass # Replace with function body.
 
@@ -61,6 +73,10 @@ func _on_timer_timeout():
     characterReady = true;
     generateNewCharacter();
     door.knock();
+    pass # Replace with function body.
+
+func _on_day_timer_day_ended():
+    print("Day ended!")
     pass # Replace with function body.
 
 func generateNewCharacter():
@@ -77,7 +93,10 @@ func startCharacterTimer():
     timer.start();
     pass;
 
+func updateLives(delta: int):
+    global.happyNeighbours += delta;
+    healthBar.value = maxHealth + global.happyNeighbours;
 
-func _on_day_timer_day_ended():
-    print("Day ended!")
-    pass # Replace with function body.
+    if(maxHealth + global.happyNeighbours <= 0):
+        print("Neighbors are not happy >:c");
+    pass;
