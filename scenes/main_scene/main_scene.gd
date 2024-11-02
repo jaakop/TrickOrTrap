@@ -14,7 +14,7 @@ extends Control
 
 @onready var door = $"./Door" as Door;
 
-@onready var healthBar = $"./HealthBar" as TextureProgressBar
+@onready var jinxMeter = $"./JinxMeter" as JinxMeter
 
 var characterReady: bool;
 
@@ -22,8 +22,8 @@ var lightTimer: float;
 @export var lightLength: float; 
 
 func _ready():
-    healthBar.max_value = maxHealth;
-
+    jinxMeter.setJinxLevel(global.jinxes);
+    
     if(global.currentCharacter == null):
         global.currentCharacter = Character.new();
         startCharacterTimer();
@@ -46,7 +46,7 @@ func _on_light_switch_pressed():
     if(global.currentCharacter.evil):
         print("Evil character sent out")
     else:
-        updateLives(-1);
+        updateLives(1);
 
     shadow.show();
     lightTimer = lightLength;
@@ -94,9 +94,9 @@ func startCharacterTimer():
     pass;
 
 func updateLives(delta: int):
-    global.happyNeighbours += delta;
-    healthBar.value = maxHealth + global.happyNeighbours;
+    global.jinxes += delta;
+    jinxMeter.setJinxLevel(global.jinxes);
 
-    if(maxHealth + global.happyNeighbours <= 0):
+    if(global.jinxes >= maxHealth):
         print("Neighbors are not happy >:c");
     pass;

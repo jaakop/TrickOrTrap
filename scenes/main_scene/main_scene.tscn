@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=15 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
+[ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_7uluj"]
 [ext_resource type="Texture2D" uid="uid://cj81yxbtao67k" path="res://assets/sprites/DoorBW.png" id="2_seoe4"]
 [ext_resource type="Texture2D" uid="uid://bfew8spne0a04" path="res://assets/sprites/DoorDoorBW.png" id="3_an5qq"]
 [ext_resource type="Script" path="res://scenes/main_scene/door.gd" id="4_grahw"]
@@ -11,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/kenney-ui/buttonRound_blue.png" id="7_6tgl0"]
 [ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/kenney-ui/buttonRound_beige.png" id="7_vp1an"]
 [ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
-[ext_resource type="Texture2D" uid="uid://b6tpniwpqrx6j" path="res://assets/kenney-ui/panelInset_blue.png" id="10_svlxc"]
-[ext_resource type="Texture2D" uid="uid://dxkg7aphgiaj5" path="res://assets/kenney-ui/cursorSword_silver.png" id="11_abiep"]
+[ext_resource type="Texture2D" uid="uid://b0m4lk7n2a3uw" path="res://assets/ui/jesterHat.png" id="13_0btur"]
+[ext_resource type="Script" path="res://scenes/main_scene/jinx_meter.gd" id="13_c1jd5"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
 layout_mode = 3
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7uluj")
 script = ExtResource("1_7c8mb")
 timeMin = 1.0
 timeMax = 3.0
@@ -80,6 +82,30 @@ stretch_mode = 0
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="JinxMeter" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 58.0
+offset_right = 4668.0
+offset_bottom = 1318.0
+scale = Vector2(0.1, 0.1)
+script = ExtResource("13_c1jd5")
+
+[node name="JesterHat" type="Sprite2D" parent="JinxMeter"]
+position = Vector2(797.773, 673.702)
+scale = Vector2(0.487, 0.487)
+texture = ExtResource("13_0btur")
+
+[node name="JesterHat2" type="Sprite2D" parent="JinxMeter"]
+position = Vector2(2220, 680)
+scale = Vector2(0.487, 0.487)
+texture = ExtResource("13_0btur")
+
+[node name="JesterHat3" type="Sprite2D" parent="JinxMeter"]
+position = Vector2(3590, 660)
+scale = Vector2(0.487, 0.487)
+texture = ExtResource("13_0btur")
+
 [node name="Shadow" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
@@ -100,19 +126,6 @@ texture_under = ExtResource("7_6tgl0")
 texture_progress = ExtResource("7_vp1an")
 script = ExtResource("9_bukiq")
 dayLength = 30.0
-
-[node name="HealthBar" type="TextureProgressBar" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 60.0
-offset_top = 64.0
-offset_right = 411.0
-offset_bottom = 158.0
-max_value = 3.0
-value = 3.0
-nine_patch_stretch = true
-texture_under = ExtResource("10_svlxc")
-texture_progress = ExtResource("11_abiep")
 
 [connection signal="pressed" from="Door/Window" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Door/Handle" to="." method="_on_handle_pressed"]
