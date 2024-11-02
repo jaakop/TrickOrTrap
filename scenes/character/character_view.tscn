@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyj4ker85ibv5"]
+[gd_scene load_steps=11 format=3 uid="uid://dyj4ker85ibv5"]
 
 [ext_resource type="Script" path="res://scenes/character/character_view.gd" id="1_1ufy7"]
 [ext_resource type="Resource" uid="uid://b240dqsa81n8c" path="res://assets/characters/ghost.tres" id="2_ctgnw"]
@@ -6,8 +6,10 @@
 [ext_resource type="Resource" uid="uid://cyqj34ialxpgp" path="res://assets/characters/vampyr.tres" id="3_jtdnr"]
 [ext_resource type="Resource" uid="uid://d3wkojr1il6xv" path="res://assets/characters/witch.tres" id="4_i6afk"]
 [ext_resource type="Texture2D" uid="uid://b0id4fn2s3qux" path="res://assets/sprites/porchBW.png" id="4_suyo0"]
-[ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_xahix"]
 [ext_resource type="Script" path="res://scenes/character/BackButton.gd" id="5_56ek1"]
+[ext_resource type="Texture2D" uid="uid://b3u67wo1skr0f" path="res://assets/ui/arrow.png" id="7_rd5hw"]
+[ext_resource type="Texture2D" uid="uid://q560vgp8lev5" path="res://highlight.png" id="9_x2qe1"]
+[ext_resource type="Script" path="res://scenes/main_scene/highlight.gd" id="10_wktnt"]
 
 [node name="CharacterView" type="Control"]
 layout_mode = 3
@@ -39,14 +41,42 @@ offset_bottom = 1096.0
 texture = ExtResource("3_fhha3")
 
 [node name="BackButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1169.0
-offset_top = 1078.0
-offset_right = 1630.0
-offset_bottom = 1244.0
-rotation = 3.14159
-texture_normal = ExtResource("4_xahix")
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1275.0
+offset_top = -946.0
+offset_right = 1275.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.135, 0.135)
+pivot_offset = Vector2(1275, 946)
+texture_normal = ExtResource("7_rd5hw")
+stretch_mode = 3
 script = ExtResource("5_56ek1")
 mainScene = "res://scenes/main_scene/main_scene.tscn"
+
+[node name="Highlight" type="TextureRect" parent="BackButton"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.185
+offset_top = -209.555
+offset_right = -110.185
+offset_bottom = 103.445
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1275, 629)
+mouse_filter = 2
+texture = ExtResource("9_x2qe1")
+script = ExtResource("10_wktnt")
+scaleFactor = 1.3
+tweenDuration = 0.75
 
 [connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]
