@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dspfgwwtorllt"]
+[gd_scene load_steps=19 format=3 uid="uid://dspfgwwtorllt"]
 
 [ext_resource type="Script" path="res://scenes/main_scene/main_scene.gd" id="1_7c8mb"]
 [ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_7uluj"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cc4ctp52i5761" path="res://assets/sprites/doorWindowBW.png" id="5_t08bh"]
 [ext_resource type="Texture2D" uid="uid://ctjax71rbwbfp" path="res://assets/sprites/lightSwitchBW.png" id="6_1sb07"]
 [ext_resource type="Texture2D" uid="uid://10v8r01qpi8m" path="res://shadow.png" id="6_ppvin"]
+[ext_resource type="Texture2D" uid="uid://q560vgp8lev5" path="res://highlight.png" id="7_4exya"]
+[ext_resource type="Script" path="res://scenes/main_scene/interactable.gd" id="7_seofd"]
+[ext_resource type="Script" path="res://scenes/main_scene/highlight.gd" id="8_muqtd"]
 [ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
 [ext_resource type="Texture2D" uid="uid://c8pc641r8itgs" path="res://assets/ui/sphere.png" id="12_xr164"]
 [ext_resource type="Texture2D" uid="uid://b0m4lk7n2a3uw" path="res://assets/ui/jesterHat.png" id="13_0btur"]
@@ -55,16 +58,35 @@ expand_mode = 1
 script = ExtResource("4_grahw")
 
 [node name="Window" type="TextureButton" parent="Door"]
+z_index = 99
 layout_mode = 0
 offset_left = 193.0
 offset_top = 133.0
 offset_right = 471.0
 offset_bottom = 416.0
+pivot_offset = Vector2(139, 141)
 texture_normal = ExtResource("5_t08bh")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("7_seofd")
+
+[node name="Highlight" type="TextureRect" parent="Door/Window"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(221, 221)
+mouse_filter = 2
+texture = ExtResource("7_4exya")
+script = ExtResource("8_muqtd")
+scaleFactor = 1.3
+tweenDuration = 0.75
 
 [node name="Handle" type="TextureButton" parent="Door"]
+z_index = 1
 layout_mode = 0
 offset_left = 120.0
 offset_top = 399.0
@@ -73,8 +95,30 @@ offset_bottom = 471.0
 texture_normal = ExtResource("5_akymp")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("7_seofd")
+
+[node name="Highlight" type="TextureRect" parent="Door/Handle"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -68.0
+offset_right = 68.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(104, 104)
+mouse_filter = 2
+texture = ExtResource("7_4exya")
+expand_mode = 1
+script = ExtResource("8_muqtd")
+scaleFactor = 1.3
+tweenDuration = 0.75
 
 [node name="LightSwitch" type="TextureButton" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 529.0
 offset_top = 504.0
@@ -83,6 +127,27 @@ offset_bottom = 643.0
 texture_normal = ExtResource("6_1sb07")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("7_seofd")
+
+[node name="Highlight" type="TextureRect" parent="LightSwitch"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -68.0
+offset_right = 92.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(137, 137)
+mouse_filter = 2
+texture = ExtResource("7_4exya")
+expand_mode = 1
+script = ExtResource("8_muqtd")
+scaleFactor = 1.3
+tweenDuration = 0.75
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -113,6 +178,7 @@ texture = ExtResource("13_0btur")
 
 [node name="Shadow" type="TextureRect" parent="."]
 visible = false
+z_index = 99
 layout_mode = 0
 offset_right = 2124.0
 offset_bottom = 1281.0
@@ -141,6 +207,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -13.0
+offset_right = -26.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -149,6 +219,7 @@ mainMenuScene = "res://scenes/main_menu/main_menu.tscn"
 
 [node name="Shadow" type="TextureRect" parent="ExitPopUp"]
 visible = false
+z_index = 99
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -159,6 +230,7 @@ texture = ExtResource("6_ppvin")
 
 [node name="Panel" type="Panel" parent="ExitPopUp"]
 visible = false
+z_index = 99
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

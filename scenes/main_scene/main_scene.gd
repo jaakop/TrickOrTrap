@@ -18,6 +18,8 @@ extends Control
 @onready var timer = $"./Timer" as Timer;
 
 @onready var door = $"./Door" as Door;
+@onready var handle = $"./Door/Handle/Highlight" as Highlight;
+@onready var lightSwitch = $"./LightSwitch/Highlight" as Highlight;
 
 @onready var jinxMeter = $"./JinxMeter" as JinxMeter
 
@@ -33,6 +35,9 @@ func _ready():
         global.currentCharacter = Character.new();
         startCharacterTimer();
         return;
+    else:
+        handle.startTween();
+        lightSwitch.startTween();
     characterReady = true;
     pass;
 
@@ -53,6 +58,8 @@ func _on_light_switch_pressed():
     else:
         updateLives(1);
 
+    handle.stopTween();
+    lightSwitch.stopTween();
     shadow.show();
     lightTimer = lightLength;
     pass # Replace with function body.
@@ -65,6 +72,9 @@ func _on_handle_pressed():
         get_tree().change_scene_to_file(deathScene);
     else:
         global.score += 1;
+    
+    handle.stopTween();
+    lightSwitch.stopTween();
     startCharacterTimer();
     pass # Replace with function body.
 
