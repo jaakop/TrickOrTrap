@@ -137,6 +137,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("15_8i626")
 mainMenuScene = "res://scenes/main_menu/main_menu.tscn"
 
@@ -151,6 +152,7 @@ grow_vertical = 2
 texture = ExtResource("6_ppvin")
 
 [node name="Panel" type="Panel" parent="ExitPopUp"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
