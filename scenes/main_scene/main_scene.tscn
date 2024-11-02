@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cc4ctp52i5761" path="res://assets/sprites/doorWindowBW.png" id="5_t08bh"]
 [ext_resource type="Texture2D" uid="uid://ctjax71rbwbfp" path="res://assets/sprites/lightSwitchBW.png" id="6_1sb07"]
 [ext_resource type="Texture2D" uid="uid://10v8r01qpi8m" path="res://shadow.png" id="6_ppvin"]
-[ext_resource type="Texture2D" uid="uid://d00ciprv1dont" path="res://assets/kenney-ui/buttonRound_blue.png" id="7_6tgl0"]
-[ext_resource type="Texture2D" uid="uid://csi5ksowwt6t7" path="res://assets/kenney-ui/buttonRound_beige.png" id="7_vp1an"]
 [ext_resource type="Script" path="res://scenes/main_scene/DayTimer.gd" id="9_bukiq"]
+[ext_resource type="Texture2D" uid="uid://c8pc641r8itgs" path="res://assets/ui/sphere.png" id="12_xr164"]
 [ext_resource type="Texture2D" uid="uid://b0m4lk7n2a3uw" path="res://assets/ui/jesterHat.png" id="13_0btur"]
+[ext_resource type="Texture2D" uid="uid://b158706fku83p" path="res://assets/ui/moon.png" id="13_8rd26"]
 [ext_resource type="Script" path="res://scenes/main_scene/jinx_meter.gd" id="13_c1jd5"]
 
 [node name="MainScene" type="Control" node_paths=PackedStringArray("shadow")]
@@ -114,16 +114,18 @@ offset_bottom = 1080.0
 texture = ExtResource("6_ppvin")
 
 [node name="DayTimer" type="TextureProgressBar" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 1778.0
-offset_top = 33.0
-offset_right = 1889.0
-offset_bottom = 144.0
+offset_left = 1706.0
+offset_top = 43.0
+offset_right = 1867.0
+offset_bottom = 204.0
+value = 100.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("7_6tgl0")
-texture_progress = ExtResource("7_vp1an")
+texture_under = ExtResource("12_xr164")
+texture_progress = ExtResource("13_8rd26")
+radial_initial_angle = 180.0
+radial_center_offset = Vector2(-250, 0)
 script = ExtResource("9_bukiq")
 dayLength = 30.0
 
