@@ -1,14 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyj4ker85ibv5"]
+[gd_scene load_steps=8 format=3 uid="uid://dyj4ker85ibv5"]
 
 [ext_resource type="Script" path="res://scenes/character/character_view.gd" id="1_1ufy7"]
-[ext_resource type="Texture2D" uid="uid://bkamfyb31mv1j" path="res://assets/characters/ghost/ghostHead.png" id="2_y3qv1"]
-[ext_resource type="Texture2D" uid="uid://bkjukw23lqlu" path="res://assets/characters/ghost/ghostBody.png" id="3_2r6p1"]
+[ext_resource type="Resource" uid="uid://b240dqsa81n8c" path="res://assets/characters/ghost.tres" id="2_ctgnw"]
 [ext_resource type="Texture2D" uid="uid://dvx8eef3l0y2i" path="res://Peephole.png" id="3_fhha3"]
-[ext_resource type="Texture2D" uid="uid://ba43fgo34yk6h" path="res://assets/characters/ghost/ghostHeadBad.png" id="4_g3gig"]
+[ext_resource type="Resource" uid="uid://cyqj34ialxpgp" path="res://assets/characters/vampyr.tres" id="3_jtdnr"]
 [ext_resource type="Texture2D" uid="uid://b0id4fn2s3qux" path="res://assets/sprites/porchBW.png" id="4_suyo0"]
 [ext_resource type="Texture2D" uid="uid://eufldexus7oa" path="res://arrow.png" id="4_xahix"]
 [ext_resource type="Script" path="res://scenes/character/BackButton.gd" id="5_56ek1"]
-[ext_resource type="Texture2D" uid="uid://wjxkhb6ijwya" path="res://assets/characters/ghost/ghostBodyBad.png" id="5_jemte"]
 
 [node name="CharacterView" type="Control"]
 layout_mode = 3
@@ -18,10 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1ufy7")
-heads = Array[Texture2D]([ExtResource("2_y3qv1")])
-bodies = Array[Texture2D]([ExtResource("3_2r6p1")])
-evilHeads = Array[Texture2D]([ExtResource("4_g3gig")])
-evilBodies = Array[Texture2D]([ExtResource("5_jemte")])
+characters = Array[Resource("res://scenes/character/character_preset.gd")]([ExtResource("2_ctgnw"), ExtResource("3_jtdnr")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -33,20 +28,8 @@ texture = ExtResource("4_suyo0")
 expand_mode = 1
 
 [node name="Character" type="Node2D" parent="."]
-position = Vector2(920, 713)
-
-[node name="Body" type="Sprite2D" parent="Character"]
-position = Vector2(1, 14)
-scale = Vector2(0.135125, 0.135125)
-texture = ExtResource("3_2r6p1")
-
-[node name="Head" type="Sprite2D" parent="Character"]
-position = Vector2(5, -219)
-scale = Vector2(0.1385, 0.204101)
-texture = ExtResource("2_y3qv1")
 
 [node name="Overlay" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = -8.0
 offset_top = -2.0

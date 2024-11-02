@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterPreset" load_steps=6 format=3 uid="uid://cyqj34ialxpgp"]
+
+[ext_resource type="Script" path="res://scenes/character/character_preset.gd" id="1_8s3f7"]
+[ext_resource type="Texture2D" uid="uid://bu0pibcsmtsrf" path="res://assets/characters/vampyr/body.png" id="1_tv2t0"]
+[ext_resource type="Texture2D" uid="uid://c0ej4fwk4uvtu" path="res://assets/characters/vampyr/Body evil.png" id="2_a7fwa"]
+[ext_resource type="Texture2D" uid="uid://bgu7h34farfis" path="res://assets/characters/vampyr/Head evil.png" id="3_g45x5"]
+[ext_resource type="Texture2D" uid="uid://drumpne6n6ixs" path="res://assets/characters/vampyr/head.png" id="4_vk4eo"]
+
+[resource]
+script = ExtResource("1_8s3f7")
+heads = Array[Texture2D]([ExtResource("4_vk4eo")])
+bodies = Array[Texture2D]([ExtResource("1_tv2t0")])
+evilHeads = Array[Texture2D]([ExtResource("3_g45x5")])
+evilBodies = Array[Texture2D]([ExtResource("2_a7fwa")])
+presetScene = "res://VampyrPreset.tscn"

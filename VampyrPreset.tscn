@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce4d0th3w8udm"]
+
+[ext_resource type="Texture2D" uid="uid://bu0pibcsmtsrf" path="res://assets/characters/vampyr/body.png" id="1_f0qak"]
+[ext_resource type="Texture2D" uid="uid://drumpne6n6ixs" path="res://assets/characters/vampyr/head.png" id="2_qc7os"]
+
+[node name="Character" type="Node2D"]
+position = Vector2(920, 713)
+
+[node name="Body" type="Sprite2D" parent="."]
+scale = Vector2(0.135125, 0.135125)
+texture = ExtResource("1_f0qak")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(-5, -216)
+scale = Vector2(0.1385, 0.204101)
+texture = ExtResource("2_qc7os")

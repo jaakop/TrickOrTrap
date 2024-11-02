@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterPreset" load_steps=6 format=3 uid="uid://b240dqsa81n8c"]
+
+[ext_resource type="Script" path="res://scenes/character/character_preset.gd" id="1_k52q5"]
+[ext_resource type="Texture2D" uid="uid://bkjukw23lqlu" path="res://assets/characters/ghost/ghostBody.png" id="1_qfbii"]
+[ext_resource type="Texture2D" uid="uid://wjxkhb6ijwya" path="res://assets/characters/ghost/ghostBodyBad.png" id="2_jxhrj"]
+[ext_resource type="Texture2D" uid="uid://ba43fgo34yk6h" path="res://assets/characters/ghost/ghostHeadBad.png" id="3_m5iyd"]
+[ext_resource type="Texture2D" uid="uid://bkamfyb31mv1j" path="res://assets/characters/ghost/ghostHead.png" id="4_cvv0n"]
+
+[resource]
+script = ExtResource("1_k52q5")
+heads = Array[Texture2D]([ExtResource("4_cvv0n")])
+bodies = Array[Texture2D]([ExtResource("1_qfbii")])
+evilHeads = Array[Texture2D]([ExtResource("3_m5iyd")])
+evilBodies = Array[Texture2D]([ExtResource("2_jxhrj")])
+presetScene = "res://GhostPreset.tscn"

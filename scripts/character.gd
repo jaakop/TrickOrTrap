@@ -4,3 +4,4 @@ var evil: bool;
 var generated: bool;
 var faceTexture: String;
 var bodyTexture: String;
+var preset: String;

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ddqedg43act"]
+
+[ext_resource type="Texture2D" uid="uid://bkjukw23lqlu" path="res://assets/characters/ghost/ghostBody.png" id="1_lypd4"]
+[ext_resource type="Texture2D" uid="uid://bkamfyb31mv1j" path="res://assets/characters/ghost/ghostHead.png" id="2_syg5s"]
+
+[node name="Character" type="Node2D"]
+position = Vector2(920, 713)
+
+[node name="Body" type="Sprite2D" parent="."]
+scale = Vector2(0.135125, 0.135125)
+texture = ExtResource("1_lypd4")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(5, -232)
+scale = Vector2(0.1385, 0.204101)
+texture = ExtResource("2_syg5s")
