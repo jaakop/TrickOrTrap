@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3v8vlpqhn3f5"]
+
+[ext_resource type="Theme" uid="uid://d2osqlqw31f8w" path="res://main_theme.tres" id="1_noxys"]
+[ext_resource type="Script" path="res://scenes/survive/survive.gd" id="2_6ddav"]
+
+[node name="Survive" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_noxys")
+script = ExtResource("2_6ddav")
+gameScene = "res://scenes/main_scene/main_scene.tscn"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -445.0
+offset_top = -305.0
+offset_right = 2083.0
+offset_bottom = 1779.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.345, 0.345)
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 134.0
+offset_top = 90.0
+offset_right = -154.0
+offset_bottom = 1377.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_font_sizes/font_size = 211
+text = "You successfully avoided the monsters the entire night!
+
+But the next night wont be so easy"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -488.0
+offset_top = -458.275
+offset_right = 488.0
+offset_bottom = -154.275
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 191
+text = "Continue"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

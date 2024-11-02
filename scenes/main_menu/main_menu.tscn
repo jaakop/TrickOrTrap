@@ -36,51 +36,9 @@ offset_right = 1528.0
 offset_bottom = 396.0
 theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
 theme_override_font_sizes/font_size = 116
-text = "Monsters Nigth"
+text = "Monsters Night"
 
 [node name="Label2" type="Label" parent="Label"]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 93.0
-offset_right = 997.0
-offset_bottom = 184.0
-theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 0.6)
-theme_override_font_sizes/font_size = 46
-text = "By: Jaakko Sukuvaara"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 663.0
-offset_top = 238.0
-offset_right = 1528.0
-offset_bottom = 396.0
-theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
-theme_override_font_sizes/font_size = 116
-text = "Monsters Nigth"
-
-[node name="Label2" type="Label" parent="Label2"]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 93.0
-offset_right = 997.0
-offset_bottom = 184.0
-theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 0.6)
-theme_override_font_sizes/font_size = 46
-text = "By: Jaakko Sukuvaara"
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 663.0
-offset_top = 238.0
-offset_right = 1528.0
-offset_bottom = 396.0
-theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
-theme_override_font_sizes/font_size = 116
-text = "Monsters Nigth"
-
-[node name="Label2" type="Label" parent="Label3"]
 layout_mode = 0
 offset_left = 432.0
 offset_top = 93.0

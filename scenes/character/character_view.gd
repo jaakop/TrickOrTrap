@@ -25,7 +25,7 @@ func loadCharacter():
     
     headSprite.texture = load(global.currentCharacter.faceTexture);
     bodySprite.texture = load(global.currentCharacter.bodyTexture);
-    pass ;
+    pass;
 
 func generateCharacter():
     print("Generated new character")

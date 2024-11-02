@@ -3,7 +3,12 @@ extends Control
 @export var timeMin: float;
 @export var timeMax: float;
 
+@export var minScore: int;
+
 @export_file var characherScene: String;
+@export_file var deathScene: String;
+@export_file var jinxedScene: String;
+@export_file var survivedScene: String;
 
 @export var shadow: TextureRect;
 
@@ -57,9 +62,9 @@ func _on_handle_pressed():
         return;
 
     if(global.currentCharacter.evil):
-        print("Evil character let in :c");
+        get_tree().change_scene_to_file(deathScene);
     else:
-        print("Good character let in!")
+        global.score += 1;
     startCharacterTimer();
     pass # Replace with function body.
 
@@ -76,7 +81,12 @@ func _on_timer_timeout():
     pass # Replace with function body.
 
 func _on_day_timer_day_ended():
-    print("Day ended!")
+    if(global.jinxes >= maxHealth || global.score < minScore):
+        get_tree().change_scene_to_file(jinxedScene);
+        return;
+
+    global.day += 1;
+    get_tree().change_scene_to_file(survivedScene);
     pass # Replace with function body.
 
 func generateNewCharacter():

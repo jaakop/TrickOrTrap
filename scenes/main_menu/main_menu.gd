@@ -1,6 +1,15 @@
 extends Control
 
 @export_file var mainScene: String;
+@onready var global = $"/root/Global" as Globals
+
+func _ready():
+    global.currentCharacter = null;
+    global.dayTime = -1;
+    global.jinxes = 0;
+    global.day = 1;
+    global.score = 0;
+    pass;
 
 func _on_button_2_pressed():
     get_tree().quit();

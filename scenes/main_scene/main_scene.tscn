@@ -27,7 +27,11 @@ theme = ExtResource("1_7uluj")
 script = ExtResource("1_7c8mb")
 timeMin = 1.0
 timeMax = 3.0
+minScore = 5
 characherScene = "res://scenes/character/character_view.tscn"
+deathScene = "res://scenes/death/death.tscn"
+jinxedScene = "res://scenes/jinxed/jinxed.tscn"
+survivedScene = "res://scenes/survive/survive.tscn"
 shadow = NodePath("Shadow")
 maxHealth = 3
 lightLength = 2.0
@@ -128,7 +132,9 @@ texture_progress = ExtResource("13_8rd26")
 radial_initial_angle = 180.0
 radial_center_offset = Vector2(-250, 0)
 script = ExtResource("9_bukiq")
-dayLength = 30.0
+dayLength = 60.0
+timePerDay = 5.0
+minDayLenght = 20.0
 
 [node name="ExitPopUp" type="Control" parent="."]
 layout_mode = 1
